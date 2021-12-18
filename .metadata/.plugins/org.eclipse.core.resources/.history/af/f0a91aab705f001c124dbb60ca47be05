@@ -1,0 +1,17 @@
+package br.com.lucas.typesEnum;
+
+public enum Types {
+
+	Magia(1),
+	Criatura(2);
+	
+	private int code;
+
+	private Types(int code) {
+	this.code = code;
+	}
+	
+	public getCode() {
+		return code;
+	}
+}

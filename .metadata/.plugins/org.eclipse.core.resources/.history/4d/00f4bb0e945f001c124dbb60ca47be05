@@ -1,0 +1,30 @@
+package br.com.lucas.cofing.mock;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+
+import br.com.lucas.entities.Player;
+import br.com.lucas.entities.repository.CardRepository;
+import br.com.lucas.entities.repository.PlayerRepository;
+
+public class MockData implements CommandLineRunner{
+
+	@Autowired
+	private CardRepository cardRepo;
+
+	@Autowired
+	private PlayerRepository playerRepo;
+	
+	
+	@Override
+	public void run(String... args) throws Exception {
+	
+		Player p1 = new Player("Lucas");
+		Player p2 = new Player("Pedro");
+
+		playerRepo.saveAll(p1,p2)
+	}
+	
+	
+
+}

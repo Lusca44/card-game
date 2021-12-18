@@ -1,0 +1,15 @@
+package br.com.lucas.entities.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import br.com.lucas.entities.Card;
+
+public interface CardRepository extends JpaRepository<Card, Long>{
+
+	@Query("SELECT * FROM CARD c WHERE c.nome LIKE '%?%'")
+	List<Card> cardsByName;
+	
+}

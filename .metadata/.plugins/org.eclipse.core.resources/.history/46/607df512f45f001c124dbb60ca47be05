@@ -1,0 +1,68 @@
+package br.com.lucas.cofing.mock;
+
+import java.util.Arrays;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Configuration;
+
+import br.com.lucas.entities.Card;
+import br.com.lucas.entities.Player;
+import br.com.lucas.entities.repository.CardRepository;
+import br.com.lucas.entities.repository.PlayerRepository;
+import br.com.lucas.typesEnum.Classes;
+import br.com.lucas.typesEnum.Types;
+
+@Configuration
+public class MockData implements CommandLineRunner{
+
+	@Autowired
+	private CardRepository cardRepo;
+
+	@Autowired
+	private PlayerRepository playerRepo;
+	
+	
+	@Override
+	public void run(String... args) throws Exception {
+	
+		Player p1 = new Player("Lucas");
+		Player p2 = new Player("Pedro");
+		
+		Card c1 = new Card("Dragão", "Ataque aéreo", 5, 3, Types.CRIATURA, Classes.QUALQUER);
+		Card c2 = new Card("Dragão", "Ataque aéreo", 5, 3, Types.CRIATURA, Classes.QUALQUER);
+		Card c3 = new Card("Dragão", "Ataque aéreo", 5, 3, Types.CRIATURA, Classes.QUALQUER);
+		Card c4 = new Card("Dragão", "Ataque aéreo", 5, 3, Types.CRIATURA, Classes.QUALQUER);
+		Card c5 = new Card("Dragão", "Ataque aéreo", 5, 3, Types.CRIATURA, Classes.QUALQUER);
+		Card c6 = new Card("Dragão", "Ataque aéreo", 5, 3, Types.CRIATURA, Classes.QUALQUER);
+		Card c7 = new Card("Dragão", "Ataque aéreo", 5, 3, Types.CRIATURA, Classes.QUALQUER);
+		Card c8 = new Card("Dragão", "Ataque aéreo", 5, 3, Types.CRIATURA, Classes.QUALQUER);
+		Card c9 = new Card("Dragão", "Ataque aéreo", 5, 3, Types.CRIATURA, Classes.QUALQUER);
+		Card c10 = new Card("Dragão", "Ataque aéreo", 5, 3, Types.CRIATURA, Classes.QUALQUER);
+		Card c11 = new Card("Dragão", "Ataque aéreo", 5, 3, Types.CRIATURA, Classes.QUALQUER);
+		Card c12 = new Card("Dragão", "Ataque aéreo", 5, 3, Types.CRIATURA, Classes.QUALQUER);
+		Card c13 = new Card("Dragão", "Ataque aéreo", 5, 3, Types.CRIATURA, Classes.QUALQUER);
+		Card c14 = new Card("Dragão", "Ataque aéreo", 5, 3, Types.CRIATURA, Classes.QUALQUER);
+		Card c15 = new Card("Dragão", "Ataque aéreo", 5, 3, Types.CRIATURA, Classes.QUALQUER);
+		Card c16 = new Card("Dragão", "Ataque aéreo", 5, 3, Types.CRIATURA, Classes.QUALQUER);
+		Card c17 = new Card("Dragão", "Ataque aéreo", 5, 3, Types.CRIATURA, Classes.QUALQUER);
+		Card c18 = new Card("Dragão", "Ataque aéreo", 5, 3, Types.CRIATURA, Classes.QUALQUER);
+		Card c19 = new Card("Dragão", "Ataque aéreo", 5, 3, Types.CRIATURA, Classes.QUALQUER);
+		Card c20 = new Card("Dragão", "Ataque aéreo", 5, 3, Types.CRIATURA, Classes.QUALQUER);
+		Card c21 = new Card("Dragão", "Ataque aéreo", 5, 3, Types.CRIATURA, Classes.QUALQUER);
+		Card c22 = new Card("Dragão", "Ataque aéreo", 5, 3, Types.CRIATURA, Classes.QUALQUER);
+		Card c23 = new Card("Dragão", "Ataque aéreo", 5, 3, Types.CRIATURA, Classes.QUALQUER);
+		Card c24 = new Card("Dragão", "Ataque aéreo", 5, 3, Types.CRIATURA, Classes.QUALQUER);
+		Card c25 = new Card("Dragão", "Ataque aéreo", 5, 3, Types.CRIATURA, Classes.QUALQUER);
+		Card c26 = new Card("Dragão", "Ataque aéreo", 5, 3, Types.CRIATURA, Classes.QUALQUER);
+		Card c27 = new Card("Dragão", "Ataque aéreo", 5, 3, Types.CRIATURA, Classes.QUALQUER);
+		Card c28 = new Card("Dragão", "Ataque aéreo", 5, 3, Types.CRIATURA, Classes.QUALQUER);
+		Card c29 = new Card("Dragão", "Ataque aéreo", 5, 3, Types.CRIATURA, Classes.QUALQUER);
+		Card c30 = new Card("Dragão", "Ataque aéreo", 5, 3, Types.CRIATURA, Classes.QUALQUER);
+		
+		playerRepo.saveAll(Arrays.asList(p1,p2));
+	}
+	
+	
+
+}

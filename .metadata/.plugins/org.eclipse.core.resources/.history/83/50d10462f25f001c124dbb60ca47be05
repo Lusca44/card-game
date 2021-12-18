@@ -1,0 +1,39 @@
+package br.com.lucas.cofing.mock;
+
+import java.util.Arrays;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Configuration;
+
+import br.com.lucas.entities.Card;
+import br.com.lucas.entities.Player;
+import br.com.lucas.entities.repository.CardRepository;
+import br.com.lucas.entities.repository.PlayerRepository;
+import br.com.lucas.typesEnum.Classes;
+import br.com.lucas.typesEnum.Types;
+
+@Configuration
+public class MockData implements CommandLineRunner{
+
+	@Autowired
+	private CardRepository cardRepo;
+
+	@Autowired
+	private PlayerRepository playerRepo;
+	
+	
+	@Override
+	public void run(String... args) throws Exception {
+	
+		Player p1 = new Player("Lucas");
+		Player p2 = new Player("Pedro");
+		
+		Card c1 = new Card("Dragão", "Ataque aéreo", 5, 3, Types.CRIATURA, Classes.QUALQUER);
+		
+		playerRepo.saveAll(Arrays.asList(p1,p2));
+	}
+	
+	
+
+}

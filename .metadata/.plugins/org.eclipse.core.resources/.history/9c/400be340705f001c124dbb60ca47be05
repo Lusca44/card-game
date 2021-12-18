@@ -1,0 +1,9 @@
+package br.com.lucas.typesEnum;
+
+public enum Types {
+
+	Magia,
+	Criatura
+	
+	private int code;
+}

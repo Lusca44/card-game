@@ -1,0 +1,5 @@
+package br.com.lucas.entities;
+
+public class Card {
+
+}

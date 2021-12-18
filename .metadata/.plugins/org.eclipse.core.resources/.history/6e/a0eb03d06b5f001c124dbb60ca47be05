@@ -1,0 +1,29 @@
+package br.com.lucas.services;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import br.com.lucas.entities.Player;
+import br.com.lucas.entities.repository.PlayerRepository;
+
+@Service
+public class PlayerService {
+	
+	@Autowired
+	private PlayerRepository repo;
+	
+	public List<Player> findAll(){
+		return repo.findAll();
+	}
+
+	public Player findById(Long id){
+		Optional<Player> player = repo.findById(id);
+		if(player.isEmpty()) {
+			throw new RuntimeException("Player id not found");
+		}
+		return player.get();
+	}
+}

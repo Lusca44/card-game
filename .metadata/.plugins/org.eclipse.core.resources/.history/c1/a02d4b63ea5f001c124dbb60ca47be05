@@ -1,0 +1,60 @@
+package br.com.lucas.services;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import br.com.lucas.entities.Card;
+import br.com.lucas.entities.Player;
+import br.com.lucas.entities.repository.PlayerRepository;
+
+@Service
+public class PlayerService {
+	
+	@Autowired
+	private PlayerRepository repo;
+	
+	public List<Player> findAll(){
+		return repo.findAll();
+	}
+
+	public Player findById(Long id){
+		Optional<Player> player = repo.findById(id);
+		if(player.isEmpty()) {
+			throw new RuntimeException("Player id not found");
+		}
+		return player.get();
+	}
+	
+	public Player create(Player player) {
+		return repo.save(player);
+	}
+	
+	public void delete (Long id) {
+		repo.delete(this.findById(id));
+	}
+	
+	public void update(Long id, Player obj) {
+		Player player = this.findById(id);
+		updateData(player, obj);
+		repo.save(player);
+	}
+	
+	public void danoRecebido(Long id, Integer dano) {
+		Player player = this.findById(id);
+		player.danoRecebido(dano);
+		repo.save(player);
+	}
+	
+	public void addCard(Long id, Card card) {
+		Player player = this.findById(id);
+		
+		player.addCards(card);
+	}
+	
+	private void updateData(Player player, Player obj) {
+		player.setNome(obj.getNome() != null ? obj.getNome() : player.getNome());
+	}
+}

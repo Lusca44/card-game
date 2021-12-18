@@ -1,0 +1,22 @@
+package br.com.lucas.entities;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+
+import br.com.lucas.typesEnum.Classes;
+import br.com.lucas.typesEnum.Types;
+
+@Entity
+public class Card implements Serializable{
+	private static final long serialVersionUID = 1L;
+	
+	private Long id;
+	private String nome;
+	private String descricao;
+	private Integer ataque;
+	private Integer defesa;
+	private Types type;
+	private Classes classe;
+
+}

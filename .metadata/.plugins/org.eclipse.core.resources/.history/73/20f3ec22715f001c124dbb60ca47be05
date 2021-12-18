@@ -1,0 +1,29 @@
+package br.com.lucas.typesEnum;
+
+public enum Classes {
+
+	MAGO(1),
+	PALADINO(2),
+	CAÇADOR(2),
+	DRUIDA(2),
+	QUALQUER(2);
+	
+	private int code;
+
+	private Classes(int code) {
+	this.code = code;
+	}
+	
+	public int getCode() {
+		return code;
+	}
+	
+	public static Classes valueOf(int code) {
+		for(Classes type : Classes.values()){
+			if(type.getCode() == code) {
+				return type;
+			}
+		}
+		 throw new IllegalArgumentException("Card type not found!");
+	}
+}
